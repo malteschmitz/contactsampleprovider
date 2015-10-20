@@ -5,6 +5,8 @@ require 'faker'
 NUM_CATEGORIES = 10
 NUM_CONTACTS = rand(100) + 400
 
+set :protection, :except => [:json_csrf]
+
 def mailify(s, sub = '-')
   s.downcase.gsub(/\W+/, sub)
 end
@@ -60,6 +62,6 @@ get '/' do
     }
   end
 
-  headers 'Content-Type' => 'application/json'
+  content_type :json
   body JSON.pretty_generate(categories: categories, contacts: contacts)
 end
