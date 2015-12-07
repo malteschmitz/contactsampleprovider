@@ -38,8 +38,6 @@ get '/' do
   categories = categorie_names.sample(NUM_CATEGORIES).shuffle.zip(colors.shuffle).map.with_index { |(name, color), index| {id: index + 1, name: name, color: color} }
   mail_providers = ['web.de', 'gmail.com', 't-online.de', 'gmx.de', 'gmx.net', 'googlemail.com', 'arcor.de', 'alice-dsl.de']
 
-
-
   contacts = Array.new(NUM_CONTACTS) do
     name = Faker::Name.name
     company = companies.sample
@@ -63,5 +61,6 @@ get '/' do
   end
 
   content_type :json
+  headers 'Access-Control-Allow-Origin' => '*'
   body JSON.pretty_generate(categories: categories, contacts: contacts)
 end
