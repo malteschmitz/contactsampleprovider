@@ -58,7 +58,7 @@ get '/' do
       phones: phones,
       emails: emails,
       dateOfBirth: Faker::Time.between(DateTime.new(1950,1,1), DateTime.new(2000,12,31)).strftime('%Y-%m-%d'),
-      categorie: categories.sample[:id]
+      category: categories.sample[:id]
     }
   end
 

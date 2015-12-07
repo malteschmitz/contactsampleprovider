@@ -30,7 +30,7 @@
         "elmo.green@swaniawski-and-sons.com"
       ],
       "dateOfBirth": "1979-08-25",
-      "categorie": 2
+      "category": 2
     },
     {
       "name": "Agnes Kohler",
@@ -46,7 +46,7 @@
         "agnes.kohler@web.de"
       ],
       "dateOfBirth": "1955-08-20",
-      "categorie": 1
+      "category": 1
     }
   ]
 }
